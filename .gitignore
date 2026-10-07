@@ -1,0 +1,25 @@
+# secrets
+.env
+.env.*
+!.env.example
+
+# runtime data
+data/
+workspace/*
+!workspace/.gitkeep
+!workspace/sample_sales.csv
+
+# python
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+*.egg-info/
+
+# editors / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

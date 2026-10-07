@@ -1,0 +1,17 @@
+[project]
+name = "clawmind"
+version = "1.0.0"
+description = "A personal tool-using AI agent that runs on your own computer"
+requires-python = ">=3.10"
+
+[tool.ruff]
+line-length = 130
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "B"]
+ignore = ["B008"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"

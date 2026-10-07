@@ -1,0 +1,13 @@
+.env
+.env.*
+.venv
+venv
+data
+workspace
+__pycache__
+*.pyc
+.pytest_cache
+.ruff_cache
+.git
+tests
+*.zip

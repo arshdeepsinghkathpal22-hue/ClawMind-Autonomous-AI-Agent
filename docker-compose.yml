@@ -1,0 +1,35 @@
+services:
+  clawmind:
+    build:
+      context: .
+      args:
+        INSTALL_BROWSER: "false"
+    image: clawmind:latest
+    # Run as your own user so files in ./workspace and ./data stay editable
+    user: "${UID:-1000}:${GID:-1000}"
+    env_file:
+      - path: .env
+        required: false
+    environment:
+      HOST: 0.0.0.0
+      # Safe only because the port below is published on 127.0.0.1.
+      # If you publish it on 0.0.0.0, remove this and set a password instead.
+      DOCKER_LOCAL_ONLY: "true"
+    ports:
+      - "127.0.0.1:8000:8000"
+    volumes:
+      - ./workspace:/app/workspace
+      - ./data:/app/data
+    # Lets the container reach Ollama running on the host: LLM_BASE_URL=http://host.docker.internal:11434/v1
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    read_only: true
+    tmpfs:
+      - /tmp:size=256m
+    cap_drop:
+      - ALL
+    security_opt:
+      - no-new-privileges:true
+    mem_limit: 2g
+    pids_limit: 256
+    restart: unless-stopped

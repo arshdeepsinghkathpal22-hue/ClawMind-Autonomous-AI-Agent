@@ -1,0 +1,121 @@
+date,region,product,units,unit_price,revenue,sales_rep
+2026-01-03,East,Backpack,13,24.0,311.26,Asha
+2026-01-05,North,Headphones,7,45.0,285.27,Karan
+2026-01-07,West,Notebook,27,3.5,93.07,Ravi
+2026-01-09,North,Headphones,19,45.0,820.37,Ravi
+2026-01-11,East,Desk Lamp,5,18.5,90.75,Zoya
+2026-01-13,South,Notebook,19,3.5,65.55,Ravi
+2026-01-15,North,Headphones,2,45.0,89.36,Karan
+2026-01-17,East,Desk Lamp,19,18.5,365.04,Meera
+2026-01-19,South,Notebook,19,3.5,62.84,Karan
+2026-01-21,East,Headphones,3,45.0,123.89,Karan
+2026-01-23,West,Desk Lamp,2,18.5,38.64,Asha
+2026-01-25,East,Water Bottle,23,9.0,197.17,Karan
+2026-01-27,North,Water Bottle,16,9.0,144.66,Asha
+2026-01-29,West,Water Bottle,,9.0,198.28,Meera
+2026-01-31,South,Headphones,4,45.0,175.33,Ravi
+2026-02-02,South,Desk Lamp,13,18.5,249.52,Karan
+2026-02-04,East,Backpack,27,24.0,625.05,Zoya
+2026-02-06,East,Desk Lamp,8,18.5,136.55,Ravi
+2026-02-08,North,Desk Lamp,27,18.5,493.69,Meera
+2026-02-10,East,Headphones,19,45.0,810.36,Ravi
+2026-02-12,North,Desk Lamp,29,18.5,552.94,Zoya
+2026-02-14,North,Desk Lamp,21,18.5,372.99,Ravi
+2026-02-16,South,Notebook,,3.5,38.12,Asha
+2026-02-18,North,Water Bottle,20,9.0,162.69,Ravi
+2026-02-20,East,Water Bottle,20,9.0,171.83,Asha
+2026-02-22,West,Desk Lamp,16,18.5,280.25,Ravi
+2026-02-24,East,Desk Lamp,,18.5,501.4,Zoya
+2026-02-26,East,Backpack,23,24.0,541.77,Asha
+2026-02-28,North,Water Bottle,17,9.0,146.12,Ravi
+2026-03-02,East,Backpack,20,24.0,490.43,Ravi
+2026-03-04,South,Backpack,17,24.0,397.36,Asha
+2026-03-06,West,Water Bottle,7,9.0,63.24,Meera
+2026-03-08,East,Water Bottle,3,9.0,25.19,Ravi
+2026-03-10,West,Headphones,29,45.0,1293.96,Asha
+2026-03-12,North,Notebook,30,3.5,100.62,Ravi
+2026-03-14,East,Notebook,26,3.5,94.82,Karan
+2026-03-16,North,Backpack,6,24.0,151.05,Asha
+2026-03-18,South,Headphones,27,45.0,1202.1,Karan
+2026-03-20,South,Notebook,1,3.5,3.57,Asha
+2026-03-22,West,Backpack,27,24.0,668.14,Asha
+2026-03-24,South,Headphones,11,45.0,464.76,Karan
+2026-03-26,East,Desk Lamp,22,18.5,401.91,Zoya
+2026-03-28,South,Headphones,5,45.0,220.17,Asha
+2026-03-30,North,Backpack,6,24.0,132.66,Zoya
+2026-04-01,East,Headphones,17,45.0,752.24,Asha
+2026-04-03,,Water Bottle,2,9.0,18.29,Zoya
+2026-04-05,North,Desk Lamp,11,18.5,201.85,Zoya
+2026-04-07,East,Desk Lamp,17,18.5,308.21,Karan
+2026-04-09,East,Headphones,29,45.0,1359.14,Karan
+2026-04-11,West,Water Bottle,3,9.0,27.02,Karan
+2026-04-13,North,Backpack,23,24.0,550.08,Meera
+2026-04-15,West,Backpack,24,24.0,600.7,Karan
+2026-04-17,South,Backpack,23,24.0,532.53,Zoya
+2026-04-19,East,Water Bottle,3,9.0,27.22,Asha
+2026-04-21,North,Desk Lamp,11,18.5,198.94,Meera
+2026-04-23,South,Notebook,3,3.5,9.87,Asha
+2026-04-25,South,Desk Lamp,28,18.5,537.02,Meera
+2026-04-27,West,Water Bottle,3,9.0,25.43,Ravi
+2026-04-29,North,Notebook,26,3.5,85.46,Zoya
+2026-05-01,North,Desk Lamp,1,18.5,17.59,Zoya
+2026-05-03,South,Notebook,17,3.5,59.88,Asha
+2026-05-05,South,Backpack,30,24.0,681.7,Meera
+2026-05-07,West,Headphones,22,45.0,917.42,Meera
+2026-05-09,North,Notebook,1,3.5,3.53,Zoya
+2026-05-11,South,Desk Lamp,4,18.5,73.91,Karan
+2026-05-13,West,Headphones,10,45.0,451.42,Ravi
+2026-05-15,South,Desk Lamp,,18.5,232.5,Ravi
+2026-05-17,East,Desk Lamp,6,18.5,100.82,Karan
+2026-05-19,East,Headphones,8,45.0,361.41,Asha
+2026-05-21,West,Notebook,9,3.5,30.07,Meera
+2026-05-23,South,Notebook,29,3.5,96.06,Meera
+2026-05-25,North,Desk Lamp,9,18.5,162.41,Ravi
+2026-05-27,North,Water Bottle,27,9.0,221.97,Karan
+2026-05-29,East,Water Bottle,21,9.0,176.7,Zoya
+2026-05-31,South,Headphones,13,45.0,593.57,Karan
+2026-06-02,South,Notebook,27,3.5,96.89,Zoya
+2026-06-04,South,Headphones,25,45.0,1097.61,Asha
+2026-06-06,South,Notebook,1,3.5,3.17,Meera
+2026-06-08,West,Headphones,2,45.0,89.47,Zoya
+2026-06-10,North,Desk Lamp,26,18.5,437.96,Zoya
+2026-06-12,North,Desk Lamp,9,18.5,170.06,Meera
+2026-06-14,South,Desk Lamp,16,18.5,303.94,Asha
+2026-06-16,North,Headphones,21,45.0,941.61,Asha
+2026-06-18,East,Headphones,19,45.0,786.61,Karan
+2026-06-20,North,Backpack,22,24.0,513.98,Zoya
+2026-06-22,,Headphones,7,45.0,298.23,Asha
+2026-06-24,West,Notebook,27,3.5,92.23,Karan
+2026-06-26,South,Notebook,19,3.5,60.75,Zoya
+2026-06-28,East,Notebook,23,3.5,76.86,Karan
+2026-06-30,North,Backpack,1,24.0,25.02,Karan
+2026-07-02,West,Water Bottle,,9.0,110.85,Meera
+2026-07-04,West,Notebook,30,3.5,97.58,Asha
+2026-07-06,East,Notebook,13,3.5,43.61,Zoya
+2026-07-08,East,Notebook,9,3.5,28.83,Meera
+2026-07-10,East,Desk Lamp,17,18.5,297.94,Meera
+2026-07-12,North,Desk Lamp,30,18.5,572.4,Zoya
+2026-07-14,North,Desk Lamp,15,18.5,275.35,Ravi
+2026-07-16,North,Headphones,5,45.0,208.26,Karan
+2026-07-18,East,Desk Lamp,21,18.5,363.56,Karan
+2026-07-20,South,Backpack,3,24.0,67.05,Karan
+2026-07-22,East,Desk Lamp,14,18.5,238.52,Ravi
+2026-07-24,,Water Bottle,8,9.0,68.78,Zoya
+2026-07-26,West,Desk Lamp,14,18.5,262.08,Ravi
+2026-07-28,North,Desk Lamp,9,18.5,164.19,Meera
+2026-07-30,South,Notebook,9,3.5,32.59,Karan
+2026-08-01,East,Notebook,5,3.5,15.83,Karan
+2026-08-03,North,Desk Lamp,30,18.5,576.66,Zoya
+2026-08-05,South,Notebook,8,3.5,25.85,Zoya
+2026-08-07,West,Notebook,18,3.5,64.04,Asha
+2026-08-09,North,Water Bottle,5,9.0,44.73,Zoya
+2026-08-11,North,Notebook,3,3.5,9.92,Zoya
+2026-08-13,North,Notebook,18,3.5,59.55,Karan
+2026-08-15,South,Desk Lamp,,18.5,294.13,Ravi
+2026-08-17,East,Notebook,1,3.5,3.25,Karan
+2026-08-19,West,Water Bottle,8,9.0,70.12,Meera
+2026-08-21,West,Backpack,1,24.0,24.47,Zoya
+2026-08-23,South,Water Bottle,25,9.0,230.18,Ravi
+2026-08-25,East,Notebook,20,3.5,68.21,Ravi
+2026-08-27,North,Headphones,5,45.0,233.61,Asha
+2026-08-29,South,Desk Lamp,2,18.5,37.24,Ravi

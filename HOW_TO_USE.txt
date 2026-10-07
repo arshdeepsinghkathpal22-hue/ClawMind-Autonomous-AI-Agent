@@ -1,0 +1,210 @@
+CLAWMIND - HOW TO USE
+=====================
+
+ClawMind is a personal AI assistant that runs on your own computer.
+You chat with it in your browser. It can do maths, tell the time, search
+the web, read and write files, run small Python analyses, remember things
+and set reminders.
+
+
+1. WHAT YOU NEED
+----------------
+- Python 3.10 or newer   (check with:  python --version)
+- Internet the first time (to download the libraries)
+- An AI model (optional, see step 3). Without one, only simple commands work.
+
+
+2. FIRST RUN
+------------
+1. Unzip ClawMind_full_project.zip
+2. Open a terminal / command prompt inside the ClawMind folder
+3. Run:
+
+       python run.py
+
+   (On some systems use "python3 run.py" or "py run.py")
+
+4. Wait. The first run takes a few minutes. It will:
+   - create a .venv folder and install everything
+   - create a .env settings file
+   - create the data/ and workspace/ folders
+5. When you see  "ClawMind is running at http://localhost:8000"
+   open that address in your browser.
+
+To stop ClawMind: press Ctrl+C in the terminal.
+Next time, just run "python run.py" again. It starts in a few seconds.
+
+
+3. CONNECT AN AI MODEL
+----------------------
+Open the file  .env  (inside the ClawMind folder) in any text editor.
+Fill in ONE of these options, save, then restart ClawMind.
+
+OPTION A - Ollama (free, runs on your computer)
+   1. Install Ollama from https://ollama.com
+   2. In a terminal run:   ollama pull llama3.2
+   3. In .env set:
+        LLM_BASE_URL=http://localhost:11434/v1
+        LLM_API_KEY=ollama
+        LLM_MODEL=llama3.2
+   Tip: bigger models (qwen2.5:7b, llama3.1:8b) use tools more reliably.
+
+OPTION B - OpenAI (paid API key)
+        LLM_BASE_URL=https://api.openai.com/v1
+        LLM_API_KEY=sk-your-key-here
+        LLM_MODEL=gpt-4o-mini
+
+Other providers (Groq, OpenRouter, LM Studio...) work the same way:
+put their OpenAI-compatible URL, key and model name.
+
+Never share your .env file. It holds your API key.
+
+
+4. USING THE CHAT
+-----------------
+Type a message and press Enter (Shift+Enter = new line).
+While it works you'll see short progress lines like
+"Searching the web..." or "Reading file...".
+
+Try these:
+   Calculate 125 * 42
+   What time is it?
+   Search the web for the latest Python release
+   Remember that my project is called ClawMind
+   What is my project called?
+   Remind me tomorrow at 5 PM to study DSA
+   Analyze sample_sales.csv and create a report
+
+"+ New chat" in the sidebar starts a fresh conversation.
+
+
+5. WORKING WITH FILES
+---------------------
+ClawMind can ONLY see the  workspace/  folder. Put your files there.
+
+   Copy notes.txt into ClawMind/workspace/   then ask:
+   Read notes.txt and summarize it
+   List files
+   Create a file called todo.txt containing: DSA, OS, DBMS
+   Append "Revise graph theory" to todo.txt
+   Overwrite todo.txt with: ...
+   Analyze marks.csv and make a bar chart
+
+- Works with text files: .txt .md .csv .json .py .html ...
+  (.docx and .pdf can't be read directly)
+- It never overwrites a file unless you say "overwrite" or "append".
+- Charts and files made by Python analysis go to  workspace/outputs/
+- Deleting a file always asks you first. Click "Yes, continue" or "Cancel".
+
+
+6. MEMORY
+---------
+ClawMind only remembers things you ask it to remember.
+   Remember that my exam is on 12 November
+Open "Memory" in the sidebar to see, search, add or delete memories.
+It refuses to save passwords, API keys, card numbers and similar secrets.
+
+
+7. REMINDERS AND SCHEDULED TASKS
+--------------------------------
+Ask in chat:
+   Remind me in 30 minutes to drink water
+   Remind me every day at 9am to revise DSA
+Or use "Scheduled tasks" in the sidebar: fill in What + When, click Schedule.
+
+Phrases that work:
+   in 30 minutes, in 2 hours, today at 6pm, tomorrow at 5 PM, at 9am,
+   on friday at 3pm, next monday at 9:00, every day at 9am,
+   every monday at 10:00, every 2 hours, hourly
+
+- "Reminder" just shows the message at that time.
+- "Agent task" makes ClawMind actually do the task at that time
+  (needs an AI model).
+- Reminders appear in the chat and as a pop-up in the corner.
+  Turn on desktop notifications in Settings to see them outside the tab.
+- ClawMind must be running for reminders to fire.
+
+
+8. WITHOUT AN AI MODEL (OFFLINE MODE)
+-------------------------------------
+If .env has no model, these commands still work:
+   calculate 125 * 42
+   what time is it?
+   remember that ...
+   list memories
+   forget memory 3
+   remind me tomorrow at 5 PM to study DSA
+   list files
+   read notes.txt
+Anything else will tell you that AI reasoning is unavailable.
+
+
+9. SETTINGS PAGE
+----------------
+Shows which model is connected, which tools are on, and lets you switch
+between light and dark theme. Settings themselves are changed in .env.
+
+Useful .env options:
+   PORT=8000                change the port if 8000 is busy
+   ENABLE_BROWSER=true      lets ClawMind open pages in a real browser
+                            (downloads Chromium on next start)
+   ENABLE_PYTHON_TOOL=false turn off Python analysis
+   SEARCH_PROVIDER=brave    more reliable search (needs BRAVE_API_KEY)
+
+
+10. USING IT FROM ANOTHER DEVICE (OPTIONAL)
+-------------------------------------------
+By default only your own computer can open ClawMind. To use it from your
+phone on the same Wi-Fi:
+   1. Run:  python run.py --set-password   and choose a password
+   2. In .env set  HOST=0.0.0.0  and  ALLOWED_HOSTS=<your computer's IP>
+   3. Restart and open  http://<your computer's IP>:8000  on the phone
+ClawMind will not start on the network without a password.
+
+
+11. DOCKER (OPTIONAL)
+---------------------
+If you have Docker:
+       docker compose up --build
+Then open http://localhost:8000
+For Ollama on the same computer use:
+       LLM_BASE_URL=http://host.docker.internal:11434/v1
+
+
+12. COMMON PROBLEMS
+-------------------
+"AI reasoning is unavailable"
+    -> LLM_BASE_URL / LLM_MODEL are empty in .env. Fill them and restart.
+
+"Could not connect to the AI model"
+    -> Ollama isn't running, or the URL is wrong (must end in /v1).
+
+"The AI provider rejected the request"
+    -> Wrong API key in .env.
+
+"Web search is unavailable"
+    -> No internet, or DuckDuckGo is limiting you. Wait, or use Brave.
+
+The model answers but never uses tools
+    -> Use a model that supports tool calling (see step 3).
+
+"Port 8000 is already in use"
+    -> Set PORT=8001 in .env and open http://localhost:8001
+
+Start fresh
+    -> Stop ClawMind and delete the data/ folder.
+       Your files in workspace/ are not touched.
+
+Logs (for errors): data/clawmind.log
+
+
+13. FOR DEVELOPERS
+------------------
+Run the tests:
+    Windows:      .venv\Scripts\pip install -r requirements-dev.txt
+                  .venv\Scripts\python -m pytest
+    Mac / Linux:  .venv/bin/pip install -r requirements-dev.txt
+                  .venv/bin/python -m pytest
+
+README.md has the full details: architecture, security model,
+API endpoints and how to add your own tools.

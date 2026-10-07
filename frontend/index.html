@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ClawMind</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="style.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <div class="app">
+    <aside class="sidebar" id="sidebar">
+      <div class="brand">
+        <img src="favicon.svg" alt="" width="26" height="26">
+        <span>ClawMind</span>
+      </div>
+      <button class="btn btn-primary new-chat" id="new-chat" type="button">+ New chat</button>
+      <nav class="nav" id="nav">
+        <button type="button" data-view="chat" class="active">Chat</button>
+        <button type="button" data-view="memory">Memory</button>
+        <button type="button" data-view="tasks">Scheduled tasks</button>
+        <button type="button" data-view="settings">Settings</button>
+      </nav>
+      <div class="sidebar-footer" id="model-badge">Loading…</div>
+    </aside>
+    <div class="backdrop" id="backdrop"></div>
+
+    <main class="main">
+      <header class="topbar">
+        <button class="icon-btn" id="menu-btn" type="button" aria-label="Open menu">☰</button>
+        <h1 id="view-title">Chat</h1>
+      </header>
+
+      <section class="view active" id="view-chat">
+        <div class="messages" id="messages">
+          <div class="empty" id="empty-state">
+            <h2>What can I help with?</h2>
+            <p>I can search the web, work with files in your workspace, run Python analysis, remember things and set reminders.</p>
+            <div class="examples" id="examples">
+              <button type="button">Calculate 125 * 42</button>
+              <button type="button">What time is it?</button>
+              <button type="button">Search the web for the latest Python release</button>
+              <button type="button">Analyze sample_sales.csv and create a report</button>
+              <button type="button">Remind me tomorrow at 5 PM to study DSA</button>
+              <button type="button">Remember that my project is called ClawMind</button>
+            </div>
+          </div>
+        </div>
+        <form class="composer" id="chat-form">
+          <textarea id="input" rows="1" maxlength="8000" placeholder="Message ClawMind…" title="Enter to send, Shift+Enter for a new line"></textarea>
+          <button class="btn btn-primary" id="send-btn" type="submit">Send</button>
+        </form>
+      </section>
+
+      <section class="view page" id="view-memory">
+        <p class="muted">Things ClawMind remembers about you. It only saves facts you ask it to remember, and it refuses to store passwords, keys or card numbers.</p>
+        <form class="row" id="memory-form">
+          <input id="memory-input" maxlength="500" placeholder="Add a memory, e.g. My main project is ClawMind" required>
+          <button class="btn btn-primary" type="submit">Save</button>
+        </form>
+        <input id="memory-search" class="search" placeholder="Search memories…" maxlength="200">
+        <ul class="list" id="memory-list"></ul>
+      </section>
+
+      <section class="view page" id="view-tasks">
+        <p class="muted">Reminders show up in the chat (and as desktop notifications if you allow them). Agent tasks run the text as a prompt at the scheduled time.</p>
+        <form class="task-form" id="task-form">
+          <input id="task-title" maxlength="500" placeholder="What? e.g. Study DSA" required>
+          <input id="task-when" maxlength="200" placeholder="When? e.g. tomorrow at 5 PM, every monday at 9am, every 2 hours" required>
+          <select id="task-action">
+            <option value="reminder">Reminder</option>
+            <option value="agent">Agent task</option>
+          </select>
+          <button class="btn btn-primary" type="submit">Schedule</button>
+        </form>
+        <ul class="list" id="task-list"></ul>
+      </section>
+
+      <section class="view page" id="view-settings">
+        <div class="card">
+          <h3>Appearance</h3>
+          <label class="field">Theme
+            <select id="theme-select">
+              <option value="auto">Match system</option>
+              <option value="light">Light</option>
+              <option value="dark">Dark</option>
+            </select>
+          </label>
+        </div>
+        <div class="card">
+          <h3>Notifications</h3>
+          <p class="muted" id="notify-status"></p>
+          <button class="btn" id="notify-btn" type="button">Enable desktop notifications</button>
+        </div>
+        <div class="card">
+          <h3>Configuration</h3>
+          <p class="muted">These values come from the <code>.env</code> file. Edit it and restart ClawMind to change them.</p>
+          <dl class="status" id="status-list"></dl>
+        </div>
+        <div class="card">
+          <h3>Tools</h3>
+          <ul class="tools" id="tool-list"></ul>
+        </div>
+        <div class="card hidden" id="logout-card">
+          <h3>Account</h3>
+          <button class="btn" id="logout-btn" type="button">Log out</button>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <div class="overlay hidden" id="login">
+    <form class="login-box" id="login-form">
+      <img src="favicon.svg" alt="" width="40" height="40">
+      <h2>ClawMind</h2>
+      <p class="muted">This instance requires a password.</p>
+      <input type="password" id="login-password" placeholder="Password" autocomplete="current-password" required>
+      <p class="error" id="login-error"></p>
+      <button class="btn btn-primary" type="submit">Log in</button>
+    </form>
+  </div>
+
+  <div class="toasts" id="toasts"></div>
+</body>
+</html>
