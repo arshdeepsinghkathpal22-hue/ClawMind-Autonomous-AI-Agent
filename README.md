@@ -1,3 +1,4 @@
+
 # ClawMind
 
 ClawMind is a personal AI agent that runs on your own computer. You chat with it in the browser, and it can decide to use tools: search the web, read pages, work with files in a sandboxed `workspace/` folder, run small Python analyses, remember things you tell it to, and set reminders or recurring tasks.
@@ -434,3 +435,6 @@ ClawMind/
 - Running the Python tool in a throwaway container when Docker is available
 - Multiple users with separate workspaces
 - A proper vector store (ChromaDB/sqlite-vec) for large memory collections
+
+# ClawMind-Autonomous-AI-Agent
+An intelligent AI-powered autonomous assistant designed to simplify tasks through tool integration, persistent memory, scheduled automation, file analysis, and local LLM support. Built to make AI more practical, extensible, secure, and useful for everyday workflows, productivity, and development tasks.
